@@ -1,42 +1,62 @@
-.carousel {
-  position: relative;
-}
-.carousel-item img {
-  object-fit: cover;
-}
-#carousel-thumbs {
-  background: rgba(255,255,255,.3);
-  bottom: 0;
-  left: 0;
-  padding: 0 50px;
-  right: 0;
-}
-#carousel-thumbs img {
-  border: 5px solid transparent;
-  cursor: pointer;
-}
-#carousel-thumbs img:hover {
-  border-color: rgba(255,255,255,.3);
-}
-#carousel-thumbs .selected img {
-  border-color: #fff;
-}
-.carousel-control-prev,
-.carousel-control-next {
-  width: 50px;
-}
-@media all and (max-width: 767px) {
-  .carousel-container #carousel-thumbs img {
-    border-width: 3px;
-  }
-}
-@media all and (min-width: 576px) {
-  .carousel-container #carousel-thumbs {
-    position: absolute;
-  }
-}
-@media all and (max-width: 576px) {
-  .carousel-container #carousel-thumbs {
-    background: #ccccce;
-  }
-}
+#container{
+	height:auto;
+	background-color:#ddd;	
+	}
+
+
+.principal{
+	width:480px;
+	overflow:hidden;
+	}
+
+	
+label img{
+	opacity:.3;
+	width:120px;
+	float:left;
+	cursor:pointer;
+	transition:all .4s;
+	}
+	
+.slide{
+	display:flex;
+	width:400%;	
+	transition: all .8s ease-in-out;
+	}
+
+input[name="grupo"]{
+	display:none;
+	}
+
+
+#foto2:checked~  .principal .slide{
+	margin-left:-100%;	
+	}
+
+#foto3:checked~.principal  .slide{
+	margin-left:-200%;
+	}
+	
+#foto4:checked~.principal .slide{
+	margin-left:-300%;
+	}
+
+input[name="grupo"]:checked + label img{
+	opacity:.9;
+	}
+	@media (max-width:768px) {
+		#container{
+			width:55%;
+			height:auto;
+			background-color:#ddd;	
+			}
+		
+		
+		.principal{
+			max-width: 100%;
+			overflow: hidden;
+			}
+			.principal img{
+				min-width: 10%;
+			}
+	}
